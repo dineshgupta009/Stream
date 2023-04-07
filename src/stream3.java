@@ -16,6 +16,14 @@ public class stream3 {
         employeeList.add(new Employee(144, "Murali Gowda", 28, "Male", "Product Development", 2014, 32500.0));
         employeeList.add(new Employee(155, "Nima Roy", 27, "Female", "HR", 2013, 22700.0));
 
+
+        List<String>  name = Arrays.asList("dinesh","Ashok","Ram","Sumit" ,"Parikh","dinesh");
+
+        Set<String> set = name.stream()
+                .sorted().collect(Collectors.toCollection(TreeSet::new));
+        System.out.println(set);
+
+
         // get employee The Highest  salary
         Optional<Employee> emp = employeeList.stream()
                 .collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
